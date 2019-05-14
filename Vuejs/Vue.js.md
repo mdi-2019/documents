@@ -621,12 +621,6 @@ function changeTodoCheckedStateAndReloadTodoDetailPage(todos, index, value) {
 }
 ```
 
-
-
-Vous pouvez récupérer le code source de cette application avec l'historique git de son développement en dezippant "1 - Plain html css js development.zip".
-
-
-
 ### 2 - Prise de recul sur ce code - 20 minutes
 
 * Bilan de l'architecture et du fonctionnement du code -> quelqu'un vient faire un schéma au tableau
@@ -648,6 +642,14 @@ Vous pouvez récupérer le code source de cette application avec l'historique gi
     * `#performant`
     * `#fluid`
     * `#light`
+    * `#lazy-loading-offscreen-images`
+    * `#responsive-images`
+    * `#use-images-cdn`
+    * `#defer-third-party-js`
+    * `#defer-dependencies-with-service-workers`
+    * `#code-splitting`
+    * `#PRPL-pattern`
+    * `#critical-CSS`
 
 ### 4 - Prise en main de Vue.js - 2h
 
@@ -700,3 +702,7 @@ Si après 1h30 vous n'avez pas fini les tutoriels 1 à 9, sauter directement au 
 ### 6 - Retour sur le format de ce cours - 5 à 10 minutes
 
 * Que pensez-vous du format de ce cours ?
+
+## Pour aller plus loin
+
+* [Speed at Scale: Web Performance Tips and Tricks from the Trenches (Google I/O'19)](https://www.youtube.com/watch?v=YJGCZCaIZkQ&feature=youtu.be)
