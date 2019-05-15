@@ -269,7 +269,7 @@ Dans `index.html`, après la div dont l'id est `todo-list` et avant la fermeture
             <label for="todo-to-add">Nom de la tâche</label>
             <input type="text" class="form-control" id="todo-to-add" placeholder="Tâche à ajouter à la liste">
         </div>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button id="add-todo-button" type="submit" class="btn btn-primary" >Ajouter</button>
     </form>
 </div>
 ```
@@ -281,6 +281,7 @@ Dans `main.js`
 ```js
 function addTodoAndRenderThemAll(todos) {
     return (clickOnSubmitButtonEvent) => {
+        clickOnSubmitButtonEvent.preventDefault()
         const newTodoInputEl = document.getElementById(TODO_TO_ADD_INPUT_FIELD_ID)
         const userEnteredTodo = newTodoInputEl.value
         if (userEnteredTodo !== "") {
@@ -552,6 +553,16 @@ window.onload = () => router()
 window.onpopstate = () => router()
 ```
 
+5. Ajouter les constantes utilisées dans ce code
+
+A placer en haut du fichier `main.js`.
+
+```js
+const TODO_PAGE_TEMPLATE_ID = 'todos'
+const INFO_PAGE_TEMPLATE_ID = 'info'
+const TODO_DETAIL_PAGE_TEMPLATE_ID = 'todo-detail'
+```
+
 #### 14 - Afficher le détail d'une tâche
 
 1. Ajouter un bouton sur les tâches pour rediriger vers la page présentant leur détail.
@@ -619,6 +630,15 @@ function changeTodoCheckedStateAndReloadTodoDetailPage(todos, index, value) {
     todos[index].checked = value
     displayTodoDetailsPage(index)   
 }
+```
+
+5. Ajouter au bouton "detail" de chaque tâche la bonne URL de redirection
+
+Dans la fonction `createTodoFromTemplate` du fichier `main.js` ajouter le code suivant :
+
+```js
+const detailButton = clone.querySelector('.todo-detail-button')
+detailButton.href = '#/todo-detail/' + index
 ```
 
 ### 2 - Prise de recul sur ce code - 20 minutes
